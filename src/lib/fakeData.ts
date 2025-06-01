@@ -60,10 +60,10 @@ export function generateDashboardMetrics(): DashboardMetrics {
   };
 }
 
-// Here  I generate an array of "Transaction" objects. I default to 8 items
+// Here  I generate an array of "Transaction" objects. I default to 10 items
 // Each entry randomly chooses Buy/Sell, picks a currency code, and sets   a random amount.
 // I also  generate a random date and username to fill out the table.
-export function generateRecentTransactions(count = 8): Transaction[] {
+export function generateRecentTransactions(count = 10): Transaction[] {
   return Array.from({ length: count }, () => {
     const isBuy = faker.datatype.boolean();
     

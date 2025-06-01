@@ -95,25 +95,25 @@ export default function DashboardPage() {
 
     <main className="min-h-screen bg-gray-50 p-6">
       {/* Page header */}
-      <h1 className="text-3xl font-bold mb-6">Crypto Dashboard</h1>
+      <h1 className="text-3xl font-bold mb-6 text-green-600">Crypto Dashboard</h1>
 
       {/* Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div className="bg-white shadow rounded-lg p-4">
-          <h2 className="text-sm font-semibold text-gray-500">Account Balance</h2>
-          <p className="text-2xl font-bold">{metrics.balance}</p>
+          <h2 className="text-sm font-semibold text-green-500">Account Balance</h2>
+          <p className="text-2xl font-bold text-black">{metrics.balance}</p>
         </div>
         <div className="bg-white shadow rounded-lg p-4">
-          <h2 className="text-sm font-semibold text-gray-500">Total Trades</h2>
-          <p className="text-2xl font-bold">{metrics.totalTrades}</p>
+          <h2 className="text-sm font-semibold text-green-500">Total Trades</h2>
+          <p className="text-2xl font-bold text-black">{metrics.totalTrades}</p>
         </div>
         <div className="bg-white shadow rounded-lg p-4">
-          <h2 className="text-sm font-semibold text-gray-500">Net P&L</h2>
-          <p className="text-2xl font-bold">{metrics.netPnL}</p>
+          <h2 className="text-sm font-semibold text-green-500">Net P&L</h2>
+          <p className="text-2xl font-bold text-black">{metrics.netPnL}</p>
         </div>
         <div className="bg-white shadow rounded-lg p-4">
-          <h2 className="text-sm font-semibold text-gray-500">Active Positions</h2>
-          <p className="text-2xl font-bold">{metrics.activePositions}</p>
+          <h2 className="text-sm font-semibold text-green-500">Active Positions</h2>
+          <p className="text-2xl font-bold text-black">{metrics.activePositions}</p>
         </div>
       </div>
 
@@ -121,24 +121,24 @@ export default function DashboardPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
         {/* Recent Transactions Table */}
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Recent Transactions</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-green-500">Recent Transactions</h2>
           <div className="overflow-auto shadow rounded-lg bg-white">
             <table className="min-w-full">
               <thead className="bg-gray-100">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-green-500 uppercase tracking-wider">
                     Date
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-green-500 uppercase tracking-wider">
                     Symbol
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-green-500 uppercase tracking-wider">
                     Type
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-green-500 uppercase tracking-wider">
                     Amount
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-green-500 uppercase tracking-wider">
                     User
                   </th>
                 </tr>
@@ -170,7 +170,7 @@ export default function DashboardPage() {
 
        {/* Bar Chart of Portfolio Value */}
        <section>
-          <h2 className="text-2xl font-semibold mb-4">Portfolio Value Over Time</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-green-600">Portfolio Value Over Time</h2>
           <div className="bg-white shadow rounded-lg p-4 h-full flex flex-col">
             <Bar data={barData} options={barOptions} />
           </div>
