@@ -1,3 +1,15 @@
+# Crypto Dashboard
+A simple Next.js app that shows:
+
+Four key metrics (Account Balance, Total Trades, Net P&L, Active Positions)
+
+A table of recent transactions with fake data
+
+A bar chart of portfolio holdings over time
+
+[Deployed to Vercel here
+](https://crypto-dashboard-test.vercel.app/)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
