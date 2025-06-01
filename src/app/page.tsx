@@ -38,12 +38,31 @@ export default function DashboardPage() {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [holdings, setHoldings] = useState<HoldingPoint[]>([]);
 
+  const [error, setError] = useState<string | null>(null);
+
   useEffect(() => {
-    // I'll generate everything only in the browser to avoid SSR/client mismatch
-    setMetrics(generateDashboardMetrics());
-    setTransactions(generateRecentTransactions());
-    setHoldings(generateHoldingsData());
+    try{
+    
+      // I'll generate everything only in the browser to avoid SSR/client mismatch
+      setMetrics(generateDashboardMetrics());
+      setTransactions(generateRecentTransactions());
+      setHoldings(generateHoldingsData());
+    } catch (err) {
+      console.error("Failed to generate dashboard data:", err);
+      setError("Sorry, something went wrong loading the dashboard.");
+    }
   }, []);
+
+   if (error) {
+    return (
+      <main className="min-h-screen bg-gray-50 p-6 flex items-center justify-center">
+        <div className="bg-white p-8 rounded-lg shadow">
+          <h1 className="text-xl font-semibold text-red-600">Error</h1>
+          <p className="mt-2 text-gray-700">{error}</p>
+        </div>
+      </main>
+    );
+  }
 
   // waiting for useEffect to run, render a simple placeholder
   if (!metrics) {
@@ -73,7 +92,7 @@ export default function DashboardPage() {
   };
 
   return (
-    
+
     <main className="min-h-screen bg-gray-50 p-6">
       {/* Page header */}
       <h1 className="text-3xl font-bold mb-6">Crypto Dashboard</h1>
